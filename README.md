@@ -32,3 +32,13 @@ CryptoAndroid/
 - 新增 `feature/news`、`feature/forum` 模块，并与 `core/database` 打通离线缓存。
 - 增加 WebSocket 行情订阅，优化实时价格刷新体验。
 - 为论坛增加发帖、评论、点赞与举报审核链路。
+
+## 接口调用位置（你问的“调接口在哪”）
+
+当前代码中，实时行情接口调用链路如下：
+
+- `MainActivity.onCreate()` 调用 `marketViewModel.load(listOf("BTC", "ETH", "SOL"))`
+- `MarketViewModel.load()` 调用 `marketRepository.getRealtimePrices(symbols)`
+- `MarketRepositoryImpl.getRealtimePrices()` 调用 `CryptoApiService.getRealtimePrices()`
+
+也就是说，真正发起网络请求的方法是 `CryptoApiService.getRealtimePrices()`，由 `NetworkFactory` 创建的 Retrofit Service 执行。
