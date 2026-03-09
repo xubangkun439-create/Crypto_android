@@ -55,3 +55,11 @@ CryptoAndroid/
 ```
 
 验证报告见：`docs/connectivity_validation.md`。
+
+## Android Studio 没有 Run 的处理
+
+如果你在 Android Studio 顶部看到 `Add Configuration` 且没有 `app`，请按文档操作：
+
+- `docs/android_studio_run_guide_zh.md`
+
+核心是先 `Sync Project with Gradle Files`，然后创建 `Android App` 类型配置并选择 `app` 模块。
