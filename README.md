@@ -62,4 +62,4 @@ CryptoAndroid/
 
 - `docs/android_studio_run_guide_zh.md`
 
-核心是先 `Sync Project with Gradle Files`，然后创建 `Android App` 类型配置并选择 `app` 模块。
+核心是先执行 Gradle 同步（例如右侧 Gradle 面板 `Reload All Gradle Projects` 或 `Ctrl+Shift+A` 搜索同名动作），然后创建 `Android App` 类型配置并选择 `app` 模块。
