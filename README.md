@@ -45,3 +45,13 @@ CryptoAndroid/
 
 - 当前示例的 `baseUrl` 是 `https://api.coinlore.net/`（Coinlore 公共 API，在 `MainActivity` 里配置）。
 - 所以完整请求地址会是：`https://api.coinlore.net/api/tickers/?start=0&limit=100`。
+
+## 联通性验证
+
+可执行以下脚本进行 Coinlore 联通性与响应结构校验：
+
+```bash
+./scripts/verify_coinlore_connectivity.sh
+```
+
+验证报告见：`docs/connectivity_validation.md`。
