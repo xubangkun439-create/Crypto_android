@@ -39,9 +39,9 @@ CryptoAndroid/
 
 - `MainActivity.onCreate()` 调用 `marketViewModel.load(listOf("BTC", "ETH", "SOL"))`
 - `MarketViewModel.load()` 调用 `marketRepository.getRealtimePrices(symbols)`
-- `MarketRepositoryImpl.getRealtimePrices()` 调用 `CryptoApiService.getRealtimePrices()`
+- `MarketRepositoryImpl.getRealtimePrices()` 调用 `CryptoApiService.getTickers()`
 
-也就是说，真正发起网络请求的方法是 `CryptoApiService.getRealtimePrices()`，由 `NetworkFactory` 创建的 Retrofit Service 执行。
+也就是说，真正发起网络请求的方法是 `CryptoApiService.getTickers()`，由 `NetworkFactory` 创建的 Retrofit Service 执行。
 
-- 当前示例的 `baseUrl` 是 `https://api.example.com/`（占位域名，在 `MainActivity` 里配置）。
-- 所以完整请求地址会是：`https://api.example.com/v1/market/prices`（实际项目请替换为你的真实后端域名）。
+- 当前示例的 `baseUrl` 是 `https://api.coinlore.net/`（Coinlore 公共 API，在 `MainActivity` 里配置）。
+- 所以完整请求地址会是：`https://api.coinlore.net/api/tickers/?start=0&limit=100`。

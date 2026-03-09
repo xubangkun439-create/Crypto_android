@@ -54,8 +54,9 @@
 ## 4. 数据与接口建议
 
 ### 4.1 行情接口
-- `GET /v1/market/prices?symbols=BTC,ETH&currency=USD`
-- 返回：symbol、priceUsd、change24h、volume24h、timestamp。
+- `GET https://api.coinlore.net/api/tickers/?start=0&limit=100`
+- 说明：Coinlore 返回全量 ticker，客户端按 symbol 过滤（如 BTC/ETH/SOL）。
+- 映射字段：`price_usd -> priceUsd`、`percent_change_24h -> change24h`、`volume24 -> volume24h`。
 
 ### 4.2 资讯接口
 - `GET /v1/news/latest?page=1&pageSize=20`

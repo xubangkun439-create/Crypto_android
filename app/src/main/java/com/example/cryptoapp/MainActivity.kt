@@ -18,10 +18,10 @@ import com.example.cryptoapp.feature.market.MarketViewModel
 class MainActivity : ComponentActivity() {
 
     private val marketViewModel: MarketViewModel by lazy {
-        // 当前示例使用占位域名，真实项目请替换为你自己的后端地址
-        // 实际接口路径定义在 CryptoApiService: GET /v1/market/prices
+        // 当前接入 Coinlore 公共 API
+        // 实际接口路径定义在 CryptoApiService: GET /api/tickers/?start=0&limit=100
         val service = NetworkFactory.createCryptoApiService(
-            baseUrl = "https://api.example.com/"
+            baseUrl = "https://api.coinlore.net/"
         )
         val repository = MarketRepositoryImpl(service)
         MarketViewModel(repository)
